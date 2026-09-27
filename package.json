@@ -1,8 +1,8 @@
 {
-  "name": "nouveau-dossier",
+  "name": "GestionBot",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "server.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -12,7 +12,8 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "@google/genai": "^2.24.0",
+    "express": "^4.19.2",
+    "@google/genai": "^0.2.14",
     "axios": "^1.20.0",
     "dotenv": "^18.0.3"
   }
