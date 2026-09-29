@@ -48,12 +48,11 @@ app.post('/webhook', async (req, res) => {
                 const senderID = message.from; // Numéro de l'expéditeur
                 const messageText = message.text ? message.text.body : '';
 
-                console.log(Message reçu de ${senderID}: ${messageText});
+                console.log(`Message reçu de ${senderID}: ${messageText}`);
 
                 if (messageText) {
                     // Instructions système pour donner la personnalité de Stela
                     const systemInstruction = "Tu es stela, un assistant virtuel intelligent. Tu réponds aux messages WhatsApp de manière naturelle, polie et contextuelle, en te comportant comme l'assistant d'une étudiante ou d'un ingénieure logiciel à l'IUT de Douala.";
-.";
 
                     // Appel à l'API Gemini pour générer une réponse
                     const response = await ai.models.generateContent({
@@ -82,7 +81,7 @@ app.post('/webhook', async (req, res) => {
                         }
                     );
 
-                    console.log(Réponse envoyée à ${senderID}: ${replyText});
+                    console.log(`Réponse envoyée à ${senderID}: ${replyText}`);
                 }
             }
             res.sendStatus(200);
@@ -98,5 +97,6 @@ app.post('/webhook', async (req, res) => {
 // Écoute du serveur sur le port fourni par Render ou 10000 par défaut
 const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
-    console.log(Serveur stela en cours d'exécution sur le port ${PORT});
+    console.log(`Serveur stela en cours d'exécution sur le port ${PORT}`);
+    
 });
